@@ -43,6 +43,13 @@ public class PersonaController {
 
         return respuesta;
     }
+    
+    @GetMapping ("personsa/{id}")
+    public PersonaResponse personaPorId(@PathVariable Long id) {
+        return personaService.findPersonaById(id);
+    }
+
+
 
 
 }

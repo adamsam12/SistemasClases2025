@@ -5,6 +5,6 @@ public record RequestPersona(
         String apellido1,
         String apellido2,
         String dni,
-        String sexo
+        Integer sexo
 ) {
 }

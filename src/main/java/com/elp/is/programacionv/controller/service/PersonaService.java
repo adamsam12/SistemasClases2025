@@ -14,4 +14,6 @@ public interface PersonaService {
 	//Para el post
 	void savePersona(RequestPersona persona);
 
+	PersonaResponse findPersonaById(Long id);
+
 }
