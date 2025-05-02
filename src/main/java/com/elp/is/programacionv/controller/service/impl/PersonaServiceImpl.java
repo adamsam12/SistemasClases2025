@@ -2,6 +2,7 @@ package com.elp.is.programacionv.controller.service.impl;
 
 import java.util.List;
 
+import com.elp.is.programacionv.controller.dto.RequestPersona;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,10 +18,20 @@ public class PersonaServiceImpl implements PersonaService {
 	
 	@Override
 	public List<PersonaEntity> findPersona() {
-		
-		List<PersonaEntity> personaEntity = personaRepository.findAll(); 
-		
+		List<PersonaEntity> personaEntity = personaRepository.findAll();
 		return personaEntity;
+	}
+
+	@Override
+	public void savePersona(RequestPersona persona) {
+		PersonaEntity personaEntity = new PersonaEntity();
+		personaEntity.setApellido1(persona.apellido1());
+		personaEntity.setApellido2(persona.apellido2());
+		personaEntity.setNombre(persona.nombre());
+		personaEntity.setDni(persona.dni());
+		personaEntity.setSexo(persona.sexo());
+
+		personaRepository.save(personaEntity);
 	}
 
 }

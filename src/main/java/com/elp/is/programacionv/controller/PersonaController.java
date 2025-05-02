@@ -2,6 +2,7 @@ package com.elp.is.programacionv.controller;
 
 import com.elp.is.programacionv.controller.dto.PersonaRequest;
 import com.elp.is.programacionv.controller.dto.PersonaResponse;
+import com.elp.is.programacionv.controller.dto.RequestPersona;
 import com.elp.is.programacionv.controller.model.PersonaEntity;
 import com.elp.is.programacionv.controller.service.PersonaService;
 
@@ -23,22 +24,14 @@ public class PersonaController {
         return "Hola Mundo";
     }
 
-    /*GetMapping("/personas")
-    public List<Persona> personaList() {
-        return personas();
-    }*/
-
+    //Guarda en la BD lo que viene definido en el Request (persona)
     @PostMapping("/guardar/persona")
-    public List<PersonaRequest> guardarPersona(@RequestBody PersonaRequest persona) {
-        List<PersonaRequest> listPersona = new ArrayList<>();
-        listPersona.add(persona);
-
-        return listPersona;
+    public void guardarPersona(@RequestBody RequestPersona persona) {
+        personaService.savePersona(persona);
     }
     
     @GetMapping("/persona/all")
     public List<PersonaEntity> personaAll() {
-
         return personaService.findPersona();
     }
     
