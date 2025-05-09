@@ -3,13 +3,12 @@ package com.elp.is.programacionv.controller;
 import com.elp.is.programacionv.controller.dto.PersonaRequest;
 import com.elp.is.programacionv.controller.dto.PersonaResponse;
 import com.elp.is.programacionv.controller.dto.RequestPersona;
-import com.elp.is.programacionv.controller.model.PersonaEntity;
-import com.elp.is.programacionv.controller.service.PersonaService;
+import com.elp.is.programacionv.model.PersonaEntity;
+import com.elp.is.programacionv.service.PersonaService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController

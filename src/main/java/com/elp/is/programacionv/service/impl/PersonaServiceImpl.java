@@ -1,17 +1,17 @@
-package com.elp.is.programacionv.controller.service.impl;
+package com.elp.is.programacionv.service.impl;
 
 import java.util.List;
 import java.util.Optional;
 
 import com.elp.is.programacionv.controller.dto.PersonaResponse;
 import com.elp.is.programacionv.controller.dto.RequestPersona;
-import com.elp.is.programacionv.controller.service.mapper.PersonaMapper;
+import com.elp.is.programacionv.service.mapper.PersonaMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.elp.is.programacionv.controller.model.PersonaEntity;
-import com.elp.is.programacionv.controller.repository.PersonaRepository;
-import com.elp.is.programacionv.controller.service.PersonaService;
+import com.elp.is.programacionv.model.PersonaEntity;
+import com.elp.is.programacionv.repository.PersonaRepository;
+import com.elp.is.programacionv.service.PersonaService;
 
 @Service
 public class PersonaServiceImpl implements PersonaService {
