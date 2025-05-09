@@ -39,4 +39,9 @@ public class PersonaServiceImpl implements PersonaService {
 		return null;
 	}
 
+	@Override
+	public void updatePersona(RequestPersona persona) {
+		personaRepository.save(personaMapper.toPersonaEntity(persona));
+	}
+
 }

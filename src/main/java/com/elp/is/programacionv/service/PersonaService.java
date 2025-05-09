@@ -16,4 +16,7 @@ public interface PersonaService {
 
 	PersonaResponse findPersonaById(Long id);
 
+	void updatePersona(RequestPersona persona);
+
+
 }
