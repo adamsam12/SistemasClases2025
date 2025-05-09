@@ -2,10 +2,11 @@ package com.elp.is.programacionv.controller.model;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "persona")
+@Table(name = "PRODUCTO")
 public class ProductoEntity {
 
     @Id
@@ -15,7 +16,7 @@ public class ProductoEntity {
     private String nombre;
     private Double precio;
 
-    @OneToMany(mappedBy = "producto")
+    @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL)
     private List<VentaEntity> ventas;
 
     public Long getId() {

@@ -1,23 +1,25 @@
 package com.elp.is.programacionv.controller.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "PERSONA")
 public class PersonaEntity {
-    @Id
-    @GeneratedValue(strategy  = GenerationType.IDENTITY)
-    private Long id; // Identificador único de la persona
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
-    private String nombre;
-    private String apellido1;
-    private String apellido2;
-    private String dni;
-    private String sexo;
+	private String nombre;
+	private String apellido1;
+	private String apellido2;
+	private String dni;
+	private String sexo;
+
+	@OneToMany(mappedBy = "persona", cascade = CascadeType.ALL)
+	private List<VentaEntity> ventas;
     
     
 	public Long getId() {

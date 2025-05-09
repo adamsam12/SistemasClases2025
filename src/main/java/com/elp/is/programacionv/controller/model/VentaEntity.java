@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
-@Table
+@Table (name = "VENTA")
 public class VentaEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,38 +18,9 @@ public class VentaEntity {
     @JoinColumn(name = "persona_id")
     private PersonaEntity persona;
 
-    @OneToMany(mappedBy = "venta", cascade = CascadeType.ALL)
-    private List<ProductoEntity> productos;
+    @ManyToOne
+    @JoinColumn(name = "producto_id")
+    private ProductoEntity producto;
 
-    public Long getId() {
-        return id;
-    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public LocalDateTime getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(LocalDateTime fecha) {
-        this.fecha = fecha;
-    }
-
-    public PersonaEntity getPersona() {
-        return persona;
-    }
-
-    public void setPersona(PersonaEntity persona) {
-        this.persona = persona;
-    }
-
-    public List<ProductoEntity> getProductos() {
-        return productos;
-    }
-
-    public void setProductos(List<ProductoEntity> productos) {
-        this.productos = productos;
-    }
 }
