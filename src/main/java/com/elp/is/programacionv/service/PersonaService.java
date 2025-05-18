@@ -18,5 +18,6 @@ public interface PersonaService {
 
 	void updatePersona(RequestPersona persona);
 
+	void deletePersona(Long id);
 
 }
